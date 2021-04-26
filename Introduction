@@ -1,0 +1,22 @@
+We are using Kali Linux Os. Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing. 
+It is maintained and funded by Offensive Security. It is used for penetration testing, reverse engineering.
+In this testing is done by using msfvenom and metasploit framework.
+Both msfvenom and metasploit framework are inbuilt in kali linux.
+
+(1) Msfvenom is a command line instance of Metasploit that is used to generate and output all of the various types of shell code that are available in Metasploit.
+root@kali:~# msfvenom -h
+
+The advantages of msfvenom are:
+
+* One single tool
+* Standardized command line options
+* Increased speed
+
+(2) Android payload Software payloads allow you to distribute apps to devices. The payload sends the app information and location to the devices for installation. 
+
+(3) MSFconsole provides a command line interface to access and work with the Metasploit Framework. 
+The MSFconsole is the most commonly used interface to work with the Metasploit Framework
+The Metasploit Framework is an open source penetration testing and development platform that provides exploits for a variety of applications, operating systems and platforms.
+root@kali:~# msfconsole
+
+

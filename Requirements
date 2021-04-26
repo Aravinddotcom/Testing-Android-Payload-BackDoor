@@ -1,0 +1,22 @@
+System Requirements:
+
+* Kali Linux OS (you can install Virutal Box on Kali Linux)
+* Android Device or Emulator
+* Internet Access
+
+Software tool Requirements:
+
+* Keytool (preinstalled in kali linux)
+* jar signer (preinstalled in kali linux)
+* zipalign (need to install)
+
+NOTE: If keytool command not found. Try to update using  command 
+root@kali:~# sudo apt update
+
+Install Java in Kali
+root@kali:~# sudo apt install -y default-jdk
+//check using following command whether java installed successfully.
+root@kali:~# java -version
+
+Install Zipalign
+root@kali:~# apt-get install zipalign
